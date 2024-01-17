@@ -16,8 +16,6 @@ module.exports = {
         files: [
           ".eslintrc.js",
           "jest.config.js",
-          "webpack.config.build.js",
-          "webpack.config.dev.js",
         ],
         env: {
           node: true, // Apply Node environment specifically for ESLint config
