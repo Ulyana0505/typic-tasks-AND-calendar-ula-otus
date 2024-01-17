@@ -1,23 +1,17 @@
-import { func, curry, hof, sum, Parallel, spiral, semverSort } from "../src/main";
+import { curry, sum, Parallel, spiral, semverSort } from "../src/main";
 
 // ---1---
 describe("test of curry", () => {
     it("expect hof to return right number", () => {
-        // expect(+hof(1, 2, 3, 4, 5)).toEqual(15);
-        // expect(+hof(2, 3, 4)(5, 6)).toEqual(20);
-        // expect(+hof(3, 4)(5, 6)(7)).toEqual(25);
-        // expect(+hof(4, 5)(6)(7, 8)).toEqual(30);
-        expect(+hof(5)(6)(7)(8)(9)).toEqual(35);
+        const func = (a: number, b: number, c: number, d: number, e: number) => a + b + c + d + e;
+        const hof = curry(func);
+        expect(hof(1, 2, 3, 4, 5)).toEqual(15);
+        expect(hof(2, 3, 4)(5, 6)).toEqual(20);
+        expect(hof(3, 4)(5, 6)(7)).toEqual(25);
+        expect(hof(4, 5)(6)(7, 8)).toEqual(30);
+        expect(hof(5)(6)(7)(8)(9)).toEqual(35);
     });
 });
-// Пример использования функции
-// const func = (a, b, c, d, e) => a + b + c + d + e;
-// const hof = yourFunction(func);
-// console.log(hof(1, 2, 3, 4, 5)); // 15
-// console.log(hof(2, 3, 4)(5, 6)); // 20
-// console.log(hof(3, 4)(5, 6)(7)); // 25
-// console.log(hof(4, 5)(6)(7, 8)); // 30
-// console.log(hof(5)(6)(7)(8)(9)); // 35
 
 // ---2---
 describe("test of sum", () => {

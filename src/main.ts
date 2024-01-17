@@ -8,52 +8,19 @@
 // console.log(hof(3, 4)(5, 6)(7)); // 25
 // console.log(hof(4, 5)(6)(7, 8)); // 30
 // console.log(hof(5)(6)(7)(8)(9)); // 35
-export function func(a: number, b: number, c?: number, d?: number, e?: number) {
-    let C = c || 0;
-    let D = d || 0;
-    let E = e || 0;
-    return a + b + C + D + E;
-    // if(c) {
-    //     return a + b + c;
-    // } else if(c && d) {
-    //     return a + b + c + d;
-    // } else if(c && d && e) {
-    //     return a + b + c + d + e;
-    // } else {
-    //     return a + b;
-    // }
-}
-export function curry(f, a?, b?, c?, d?, e?) {
-    // return function(a: number) {
-    //     return function(b: number) {
-    //         return f(a, b);
-    //     }
-    // }
-
-    return function(a: number) {
-        return function(b: number) {
-            return function(c: number) {
-                return function(d: number){
-                    return function(e: number){
-                        return f(a, b, c, d, e);
-                    }
-                }
+export function curry<T>(func:(...args: T[])=>T){
+    return function curried(...args: T[]) {
+        if (args.length >= func.length) {
+            // eslint-disable-next-line prefer-spread
+            return func.apply(null, args) as any;
+        } else {
+            return function(...args2: T[]) {
+                // eslint-disable-next-line prefer-spread
+                return curried.apply(null, args.concat(args2));
             }
         }
     }
-
-    // if(c) {
-    //     return a + b + c;
-    // } else if(c && d) {
-    //     return a + b + c + d;
-    // } else if(c && d && e) {
-    //     return a + b + c + d + e;
-    // } else {
-    //     return a + b;
-    // }
 }
-export const hof = curry(func);
-
 
 
 
