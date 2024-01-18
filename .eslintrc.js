@@ -19,7 +19,7 @@ module.exports = {
   ignorePatterns: ["dist"],
   overrides: [
     {
-      files: [".eslintrc.js", "jest.config.js"],
+      files: [".eslintrc.js", "jest.config.js", "tsconfig.json"],
       env: {
         node: true, // Apply Node environment specifically for ESLint config
       },
