@@ -4,7 +4,9 @@ export function curry<T>(func: (...args: T[]) => T) {
   return function curried(...args: T[]) {
     if (args.length >= func.length) {
       // eslint-disable-next-line prefer-spread
-      return func.apply(null, args);
+      const r = func.apply(null, args);
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+      return r as any;
     } else {
       return function (...args2: T[]) {
         // eslint-disable-next-line prefer-spread
