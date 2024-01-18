@@ -11,7 +11,7 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "skipLibCheck": true,
+        "skipLibCheck": true
     },
-    "include": ["src", "tests", "typings.d.ts"],
+    "include": ["src", "tests", "typings.d.ts"]
 }
