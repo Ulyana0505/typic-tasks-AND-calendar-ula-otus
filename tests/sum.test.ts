@@ -19,4 +19,10 @@ describe('test of sum', () => {
         const s4 = sum(3)
         expect(+s4(6)).toEqual(9)
     })
+    it('results if const s = sum(8)', () => {
+        const s5 = sum(8)
+        expect(+s5(5)).toEqual(13)
+        const s6 = sum(8)
+        expect(+s6(6)(1)(6)(5)).toEqual(26)
+    })
 })
