@@ -1,4 +1,4 @@
-import { semverSort } from '../src/semverSort';
+import { semverSort } from '../src/semverSort'
 
 // ---5---
 describe('test of semverSort', () => {
@@ -22,24 +22,12 @@ describe('test of semverSort', () => {
             '1.23.45',
             '2.5.0',
         ])
-    });
+    })
     it('should return right sorted arr with 5 strings', () => {
         expect(
-            semverSort([
-                '1.5.0',
-                '0.12.0',
-                '1',
-                '1.23.45',
-                '1.4.50',
-            ])
-        ).toEqual([
-            '0.12.0',
-            '1',
-            '1.4.50',
-            '1.5.0',
-            '1.23.45',
-        ])
-    });
+            semverSort(['1.5.0', '0.12.0', '1', '1.23.45', '1.4.50'])
+        ).toEqual(['0.12.0', '1', '1.4.50', '1.5.0', '1.23.45'])
+    })
     it('should return right sorted arr with 8 strings', () => {
         expect(
             semverSort([
@@ -62,5 +50,5 @@ describe('test of semverSort', () => {
             '1.21.2',
             '1.23.45',
         ])
-    });
+    })
 })

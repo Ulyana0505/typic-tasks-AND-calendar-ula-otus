@@ -1,4 +1,4 @@
-import { Parallel } from '../src/parallel';
+import { Parallel } from '../src/parallel'
 
 // ---3---
 describe('parallel', () => {
